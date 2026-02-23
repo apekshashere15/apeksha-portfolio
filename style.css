@@ -1,0 +1,527 @@
+/* ============================= */
+/* ===== THEME VARIABLES ====== */
+/* ============================= */
+
+:root {
+  --primary: #0ea5e9;
+  --accent: #06b6d4;
+  --section-bg: rgba(255,255,255,0.04);
+  --card: rgba(255,255,255,0.06);
+  --muted: #94a3b8;
+  --text-dark: #1e293b;
+  --max-w: 1100px;   /* ADD THIS LINE */
+}
+
+button:hover {
+  background: #0891b2;
+  box-shadow: 0 0 20px var(--accent);
+}
+h1, h2 {
+  color: #ffffff;
+  text-shadow: 0 0 6px rgba(6, 182, 212, 0.35);
+}
+
+/* ============================= */
+/* ===== GLOBAL RESET ========= */
+/* ============================= */
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
+/* ========================= */
+/* DARK THEME BACKGROUND */
+/* ========================= */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(
+    135deg,
+    #0f172a,
+    #0b1120,
+    #0a0f1f
+  );
+  color: #e2e8f0;
+  cursor: none; /* for custom cursor */
+}
+section {
+  padding: 60px 0;
+}
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ============================= */
+/* ===== HEADER =============== */
+/* ============================= */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.site-nav a {
+  margin-left: 22px;
+  text-decoration: none;
+  color: #e2e8f0;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.site-nav a:hover {
+  color: var(--accent);
+}
+
+/* ============================= */
+/* ===== HERO ================= */
+/* ============================= */
+
+.hero {
+  background: var(--section-bg);
+  border-radius: 14px;
+  margin: 18px 0;
+  padding: 28px;
+}
+
+.hero-inner {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.lead {
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+/* ============================= */
+/* ===== BUTTON =============== */
+/* ============================= */
+
+.btn.primary {
+  display: inline-block;
+  padding: 12px 28px;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn.primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(6, 182, 212, 0.35);
+}
+
+/* ============================= */
+/* ===== SECTIONS ============= */
+/* ============================= */
+
+.section {
+  padding: 64px 0;
+  background: var(--section-bg);
+  border-radius: 12px;
+  margin: 18px 0;
+}
+
+.section h2 {
+  margin-bottom: 18px;
+  font-size: 1.5rem;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ============================= */
+/* ===== SKILLS =============== */
+/* ============================= */
+
+.skills-grid {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.skill {
+  background: var(--card);
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Clean professional hover */
+.skill:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* ============================= */
+/* ===== PROJECTS ============= */
+/* ============================= */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  gap: 18px;
+}
+
+.project-card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(7,40,59,0.06);
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 45px rgba(6, 182, 212, 0.25);
+}
+
+/* Shimmer only for projects */
+.project-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.4),
+    transparent
+  );
+  transform: skewX(-25deg);
+  transition: left 0.8s ease;
+}
+
+.project-card:hover::after {
+  left: 120%;
+}
+
+/* ============================= */
+/* ===== CONNECT ============== */
+/* ============================= */
+
+.connect {
+  padding: 80px 0;
+  background: transparent;
+}
+.connect-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.social-icons {
+  display: flex;
+  gap: 18px;
+}
+
+.social-icons a {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  color: var(--text-dark);
+  border-radius: 50%;
+  font-size: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: translateY(-6px);
+  background: var(--accent);
+  color: white;
+}
+
+/* ============================= */
+/* ===== FOOTER =============== */
+/* ============================= */
+
+footer {
+  padding: 28px 0;
+  text-align: center;
+  color: var(--muted);
+}
+/* ===== Scroll Reveal Animation ===== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* ============================= */
+/* ===== CONTACT SECTION ====== */
+/* ============================= */
+
+#contact {
+  padding: 80px 0;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;   /* IMPORTANT */
+  gap: 16px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;              /* VERY IMPORTANT */
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: #ffffff;
+  font-size: 14px;
+  color: var(--text-dark);
+  transition: all 0.3s ease;
+}
+
+/* Focus glow */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.15);
+}
+
+.contact-form textarea {
+  min-height: 120px;
+  resize: none;
+}
+
+/* Button alignment */
+.form-actions {
+  display: flex;
+  justify-content: flex-start;   /* Align left */
+  align-items: center;
+  gap: 14px;
+}
+/* ===================== */
+/* Button Loader */
+/* ===================== */
+
+.loader {
+  width: 16px;
+  height: 16px;
+  border: 2px solid white;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  display: none;
+  animation: spin 0.6s linear infinite;
+  margin-left: 8px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Success animation */
+.form-msg {
+  font-size: 14px;
+  margin-top: 8px;
+  transition: all 0.3s ease;
+}
+/* Hide toggle button on desktop */
+#navToggle {
+  display: none;
+}
+
+/* Show toggle only on mobile */
+@media (max-width: 900px) {
+  #navToggle {
+    display: block;
+  }
+
+  #siteNav {
+    display: none;
+  }
+
+  #siteNav.active {
+    display: block;
+  }
+}
+/* ============================= */
+/* ===== MODERN HERO ========== */
+/* ============================= */
+
+.hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  padding: 60px 0;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-content h1 {
+  font-size: 2.4rem;
+  margin-bottom: 14px;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* Floating image wrapper */
+.image-wrapper {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  padding: 6px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  animation: float 4s ease-in-out infinite;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Floating animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero-inner {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+}
+/* ========================= */
+/* Custom Themed Cursor */
+/* ========================= */
+
+.cursor {
+  position: fixed;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #06b6d4; /* Accent color */
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.08s ease-out;
+  z-index: 9999;
+}
+
+.cursor::after {
+  content: "";
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  background: rgba(6, 182, 212, 0.2); /* Soft glow */
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.cursor.hover {
+  transform: translate(-50%, -50%) scale(1.8);
+  background: rgba(6, 182, 212, 0.15);
+}
+.connect-right a {
+  color: var(--accent);   /* or any color you want */
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.connect-right a:hover {
+  color: #ffffff;
+}
+.connect-right .contact-item {
+  color: var(--accent);
+}
+/* new – full‑screen particle background */
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;              /* behind page content */
+  pointer-events: none;     /* clicks pass through */
+}
+
+/* you can keep (or tweak) your existing gradient */
+body {
+  background: linear-gradient(135deg,#0f172a,#0b1120,#0a0f1f);
+  /* …other rules… */
+}

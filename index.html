@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apeksha Shere | Portfolio</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+   
+    <!-- particle background -->
+    <div id="particles-js"></div>
+
+    <!-- HEADER -->
+    <header class="site-header"> …
+        <div class="container header-inner">
+            <a class="logo" href="#">Apeksha.</a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                ☰
+            </button>
+
+            <nav class="site-nav" id="siteNav">
+                <a href="#about">About</a>
+                <a href="#resume">Resume</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+<section class="hero">
+  <div class="container hero-inner">
+
+    <!-- LEFT SIDE -->
+    <div class="hero-content">
+      <h1>Hi, I’m <span class="gradient-text">Apeksha Shere</span></h1>
+
+      <p class="lead">
+        <span id="typing"></span>
+      </p>
+
+      <div class="hero-actions">
+        <button class="btn primary" onclick="scrollToSection('projects')">
+          View Projects
+        </button>
+
+        <button class="btn primary" onclick="scrollToSection('contact')">
+          Contact Me
+        </button>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="hero-image">
+      <div class="image-wrapper">
+        <img src="images/apeksha.jpg" alt="Apeksha Shere">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+        <!-- ABOUT -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2>About Me</h2>
+                <p>
+                    I am currently pursuing BCA and have hands-on experience in HTML, CSS, JavaScript, Java, and PHP.
+                    I enjoy building responsive web applications and exploring emerging technologies like AR/VR.
+                </p>
+            </div>
+        </section>
+
+        <!-- RESUME -->
+        <section id="resume" class="section">
+            <div class="container">
+                <h2>Resume</h2>
+                <a href="resume.pdf" download class="btn primary">
+                    Download Resume
+                </a>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills" class="section bg-light">
+            <div class="container">
+                <h2>Skills</h2>
+
+                <div class="skills-grid">
+                    <div class="skill premium-card">HTML</div>
+                    <div class="skill premium-card">CSS</div>
+                    <div class="skill premium-card">JavaScript</div>
+                    <div class="skill premium-card">C</div>
+                    <div class="skill premium-card">C++</div>
+                    <div class="skill premium-card">Python</div>
+                    <div class="skill premium-card">Java</div>
+                    <div class="skill premium-card">PHP</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="section">
+            <div class="container">
+                <h2>Projects</h2>
+
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <h3>Virtual Canine Therapy</h3>
+                        <p>Virtual treatment for dog phobia using AR/VR technology.</p>
+                    </article>
+
+                    <article class="project-card">
+                        <h3>VirtuSanskriti</h3>
+                        <p>An AR application for cultural heritage preservation.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section bg-light">
+            <div class="container">
+                <h2>Contact</h2>
+
+                <form id="contactForm" class="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required />
+                    <input type="email" name="email" placeholder="Your Email" required />
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn primary" id="submitBtn">
+    <span class="btn-text">Send Message</span>
+    <span class="loader" id="loader"></span>
+</button>
+                        <p id="formMsg" class="form-msg"></p>
+                    </div>
+                </form>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- CONNECT SECTION -->
+    <section class="section connect">
+        <div class="container connect-grid">
+
+            <div class="connect-left">
+                <h2>Connect With Me</h2>
+
+                <div class="social-icons">
+                    <a href="mailto:apekshashere04@gmail.com">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/apeksha-shere-b94011287" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+
+                    <a href="https://github.com/apekshashere15" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="connect-right">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+919309952430">+91 9309952430</a>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-location-dot"></i>
+                    <span>Shegaon, Maharashtra, India</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© <span id="year"></span> Apeksha Shere. All rights reserved.</p>
+    </footer>
+
+    <!-- IMPORTANT: EmailJS First -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+    <div class="cursor" id="cursor"></div>
+    <!-- Then  JS -->
+    <script src="script.js"></script>
+    <!-- particle library -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+<script>
+  /* the configuration below creates a dark‑gradient background
+     with small white dots and linking lines like your screenshot */
+  particlesJS('particles-js', {
+    "particles": {
+      "number": {
+        "value": 80,
+        "density": { "enable": true, "value_area": 800 }
+      },
+      "color": { "value": "#ffffff" },
+      "shape": { "type": "circle" },
+      "opacity": { "value": 0.6 },
+      "size": { "value": 3, "random": true },
+      "line_linked": {
+        "enable": true,
+        "distance": 150,
+        "color": "#06b6d4",
+        "opacity": 0.4,
+        "width": 1
+      },
+      "move": {
+        "enable": true,
+        "speed": 1,
+        "direction": "none",
+        "out_mode": "out"
+      }
+    },
+    "interactivity": {
+      "events": {
+        "onhover": { "enable": true, "mode": "grab" },
+        "onclick": { "enable": false }
+      }
+    },
+    "retina_detect": true
+  });
+</script>
+
+</body>
+</html>
